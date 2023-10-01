@@ -2,8 +2,11 @@ import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:grocery_app/utils/common/color.dart';
-import 'package:grocery_app/utils/common/image.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:grocery_app/routes/app_routes.dart';
+import 'package:grocery_app/utils/common/app_color.dart';
+import 'package:grocery_app/utils/common/app_images.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -27,7 +30,7 @@ height: 70.h,
               
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image:  AssetImage(Images.orangeFruit))
+                image:  AssetImage(AppImages.orangeFruit))
             ),
             
           ), 
@@ -55,15 +58,20 @@ height: 70.h,
                                TextField(obsecure: true, inputType: TextInputType.text, hint: 'Password',),
                                SizedBox(height: 5.h,),
 
-                               Container(
-                                height: 7.h ,
-                                width: 100.w,
-                                decoration:  BoxDecoration(
-                                  color: AppColor.lightYellow,
-                                  borderRadius: BorderRadius.circular(7.h)
-                                ),
-
-                                child: Center(child: Text('SIGN IN', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),)),
+                               GestureDetector(
+                                onTap: (){
+Get.toNamed(AppRoutes.home);
+                                },
+                                 child: Container(
+                                  height: 7.h ,
+                                  width: 100.w,
+                                  decoration:  BoxDecoration(
+                                    color: AppColor.lightYellow,
+                                    borderRadius: BorderRadius.circular(7.h)
+                                  ),
+                               
+                                  child: const Center(child: Text('SIGN IN', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),)),
+                                 ),
                                )
 
                             ],
@@ -97,8 +105,8 @@ class TextField extends StatelessWidget {
      width: 100.w,
      decoration: BoxDecoration(
        borderRadius: BorderRadius.circular(6.h),
-       border: Border.all(color: const Color(0xFFCACACA
-))
+       border: Border.all(color:  AppColor.inactive
+)
      ),
       child: Center(
         child: Padding(

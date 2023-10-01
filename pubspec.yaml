@@ -34,8 +34,10 @@ dependencies:
   sizer: ^2.0.15
   feather_icons: ^1.2.0
   get: 4.6.5
+  iconsax: ^0.0.8
+  splashscreen: ^1.3.5
   
-  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -61,6 +63,12 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/img/
+    - assets/category/
+    - assets/product/
+    - assets/icon/
+
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
