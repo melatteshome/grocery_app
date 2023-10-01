@@ -93,7 +93,7 @@ class _CartPageState extends State<CartPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 IconButton(onPressed: (){
-frontLogic.decreament(index);
+                     frontLogic.decreament(index);
                                 }, icon: const Icon(FeatherIcons.minus, color: Colors.grey,size: 20,)),
                               Obx(()=>  Text( frontLogic.cart.value[index]['amount'].toString()??'', style: TextStyle(color: Colors.black, fontSize: 18),),),
                                 IconButton(onPressed: (){

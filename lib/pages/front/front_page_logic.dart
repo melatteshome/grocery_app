@@ -69,12 +69,11 @@ addToCart(var i){
 }
 
 increament(var i){
-                             cart[i]['amount'].value = cart[i]['amount'] +1;
-
+   cart.value[i]['amount'] = cart.value[i]['amount'] +1;
 }
 
 decreament(var i){
-                             cart[i]['amount'] = cart[i]['amount'] -1;
+ cart.value[i]['amount'] = cart.value[i]['amount'] -1;
 
 
 }

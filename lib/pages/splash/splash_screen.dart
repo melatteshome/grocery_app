@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
             SizedBox(height: 1.h,),
             Image.asset(AppImages.freshFruit),
 
-            SizedBox(height: 10.h,)
+            SizedBox(height: 15.h,)
           ],
         ),
       ),
