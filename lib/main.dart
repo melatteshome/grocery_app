@@ -8,6 +8,7 @@ import 'package:grocery_app/pages/home/home_logic.dart';
 import 'package:grocery_app/pages/login/login_logic.dart';
 import 'package:grocery_app/pages/login/login_screen.dart';
 import 'package:grocery_app/pages/splash/splash_logic.dart';
+import 'package:grocery_app/pages/splash/splash_screen.dart';
 import 'package:grocery_app/routes/app_pages.dart';
 import 'package:grocery_app/routes/app_routes.dart';
 import 'package:sizer/sizer.dart';
@@ -33,8 +34,8 @@ class MyApp extends StatelessWidget {
         ),
         getPages: AppPages.routes,
         initialBinding: InitBindings() ,
-        initialRoute: AppRoutes.login,
-        home: const LoginScreen()
+        initialRoute: AppRoutes.splashScreen,
+        home: const SplashScreen()
       );}
     );
   }

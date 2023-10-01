@@ -16,4 +16,6 @@ class AppImages{
   static const greyHeart ='assets/icon/heart.png';
 
   static const splash ='assets/img/splash.png';
+  static const freshFruit ='assets/img/Fresh Fruits.png';
+
 }

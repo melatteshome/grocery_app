@@ -83,7 +83,7 @@ class _FrontPageState extends State<FrontPage>
                 childAspectRatio: 1.6/2,
                 crossAxisSpacing: 20,
                 mainAxisSpacing: 15), 
-                itemCount: logic.categories.length,
+                itemCount: logic.products.length,
                 itemBuilder:  (BuildContext ctx, index){
                   return Container(
 
@@ -110,7 +110,7 @@ class _FrontPageState extends State<FrontPage>
                             height: 13.h,
                             width: 30.w,
                             decoration:  BoxDecoration(
-                              image: DecorationImage(image: AssetImage(logic.categories.value[index]['icon'] ??''), fit: BoxFit.cover)
+                              image: DecorationImage(image: AssetImage(logic.products.value[index]['icon'] ??''), fit: BoxFit.cover)
                             ),
                           ),
                         ), 
@@ -122,9 +122,9 @@ class _FrontPageState extends State<FrontPage>
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                        Text(logic.categories.value[index]['label']??'', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
+                        Text(logic.products.value[index]['label']??'', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
                            SizedBox(height: 1.h,),
-                          Text(logic.categories.value[index]['price']??'', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),),
+                          Text(logic.products.value[index]['price']??'', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),),
 
                            
                             ],
@@ -139,7 +139,7 @@ class _FrontPageState extends State<FrontPage>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                            TextButton(onPressed: (){
-                            logic.addToCart(logic.categories.value[index]);
+                            logic.addToCart(logic.products.value[index]);
                            }, child: const Text('Add to Cart', style: TextStyle(color: Color(0xFFFF0000), fontSize: 10, fontWeight: FontWeight.bold),))
                             ],
                           ),

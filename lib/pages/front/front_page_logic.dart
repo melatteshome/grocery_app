@@ -8,7 +8,7 @@ class FrontPageLogic extends GetxController{
   var favListForUi =[].obs;
 
 
-  RxList<Map<String,dynamic> >categories =[{
+  RxList<Map<String,dynamic> > products =[{
     'label':'Orange',
     'icon': AppImages.p1, 
     'price':"Br 300",
@@ -54,10 +54,10 @@ class FrontPageLogic extends GetxController{
   addToFav(var i){
  if(favList.contains(i)){
   favList.remove(i);
-  favListForUi.remove(categories[i]);
+  favListForUi.remove(products[i]);
  }else{
   favList.add(i);
-  favListForUi.add(categories[i]);
+  favListForUi.add(products[i]);
  }
   }
 
@@ -68,4 +68,14 @@ addToCart(var i){
  }
 }
 
+increament(var i){
+                             cart[i]['amount'].value = cart[i]['amount'] +1;
+
+}
+
+decreament(var i){
+                             cart[i]['amount'] = cart[i]['amount'] -1;
+
+
+}
 }

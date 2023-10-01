@@ -25,6 +25,7 @@ class _CartPageState extends State<CartPage> {
     return Scaffold(
       backgroundColor: AppColor.scaffoldBackgroud,
       appBar: AppBar(
+        
         elevation: 0,
         backgroundColor: Colors.white,
         title: const  Text('Item Detail', style: TextStyle(color: Colors.black, fontSize: 20),)),
@@ -49,7 +50,7 @@ class _CartPageState extends State<CartPage> {
                     height: 20.h,
                     width: 100.w,
                     
-                    decoration: BoxDecoration(color: Colors.white),
+                    decoration: const BoxDecoration(color: Colors.white),
                     child: Row(
                       children: [
                         Container(
@@ -71,7 +72,7 @@ class _CartPageState extends State<CartPage> {
                               children: [
                                const Text('FRUTIS'),
                                 Text(frontLogic.cart.value[index]['label']??''),
-                                Expanded(child: SizedBox(height: 1,)),
+                               const Expanded(child: SizedBox(height: 1,)),
                                 Text(frontLogic.cart.value[index]['price']??'', style: TextStyle(color: AppColor.orange, fontSize: 18, fontWeight: FontWeight.w700),)
                         
                               ],
@@ -87,17 +88,16 @@ class _CartPageState extends State<CartPage> {
                               Container(
                                 height:4.h ,
                                 width: 30.w,
-                                decoration: BoxDecoration(color: Color(0xFFEFEFEF), borderRadius: BorderRadius.circular(4.h)),
-                            child: Row(
+                                decoration: BoxDecoration(color:const Color(0xFFEFEFEF), borderRadius: BorderRadius.circular(4.h)),
+                            child:  Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 IconButton(onPressed: (){
-                                 frontLogic.cart.value[index]['amount']= frontLogic.cart.value[index]['amount'] -1;
-
-                                }, icon: Icon(FeatherIcons.minus, color: Colors.grey,size: 20,)),
+frontLogic.decreament(index);
+                                }, icon: const Icon(FeatherIcons.minus, color: Colors.grey,size: 20,)),
                               Obx(()=>  Text( frontLogic.cart.value[index]['amount'].toString()??'', style: TextStyle(color: Colors.black, fontSize: 18),),),
                                 IconButton(onPressed: (){
-                                 frontLogic.cart.value[index]['amount']= frontLogic.cart.value[index]['amount'] + 1;
+                             frontLogic.increament(index)  ;
                                 }, icon:const Icon(FeatherIcons.plus, color: Colors.grey,size: 20)),
 
 
@@ -111,7 +111,7 @@ class _CartPageState extends State<CartPage> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 10,)
+                 const SizedBox(height: 10,)
                 ],
               );
             })) ),
